@@ -46,6 +46,6 @@ Fields:
 ## Run
 
 1. Copy `.env.example` to `.env`
-2. Set `MONGODB_URI`
+2. Set `MONGO_URI` or `MONGODB_URI`
 3. Run `npm install`
 4. Run `npm start`

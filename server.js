@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/task3_database';
+const DATABASE_URI = process.env.MONGO_URI || process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/task3_database';
 
 app.use(express.json());
 
@@ -268,7 +268,7 @@ app.use((error, req, res, next) => {
 
 async function startServer() {
   try {
-    await mongoose.connect(MONGODB_URI);
+    await mongoose.connect(DATABASE_URI);
     app.listen(PORT, () => {
       console.log(`Database API running on http://localhost:${PORT}`);
     });
